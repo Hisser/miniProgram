@@ -1,0 +1,134 @@
+/* pages/partner/index.wxss */
+@import '../../wxss/weui.wxss';
+ @import '../../wxss/weui2.wxss';
+
+.nav-tabs-box{
+     padding: 0px 30rpx;
+     background: #fff;
+     border-bottom:1px solid #D6D6D6;
+}
+.nav-tabs{
+  width: 100%;
+  height: 75rpx;
+  display: flex;  
+ 
+}
+.nav-tabs .default{
+    line-height:75rpx;
+    text-align:center;
+    flex:1;
+    color:#282828;
+    font-size:30rpx;   
+}
+.nav-tabs .active{  
+  line-height:75rpx;
+    text-align:center;
+    color:#fc5558;
+    flex:1;
+    border-bottom:2px solid #FE6260;
+    font-size:30rpx;    
+} 
+.user-infor-box-item.default{  
+  display: none;  
+  flex: 1;
+}  
+.user-infor-box-item.active{  
+  display: block; 
+   flex: 1; 
+}
+.usernum{
+   padding: 0px 30rpx;
+   background: #fff; 
+   border-bottom:1px solid #ECEDED;
+   font-size:28rpx;
+   color:#666666;
+   display: flex;
+   align-items: center;
+   height: 40px;
+}
+.user-infor-box{
+    background: #fff;
+    
+
+}
+.user-infor-box .user-infor{
+     border-bottom:1px solid #ECEDED;
+     padding: 0px 30rpx;
+}
+.user-infor-box .user-infor .top-infor{
+    overflow: hidden;
+    font-size: 24rpx;
+     line-height: 85rpx;
+    height: 85rpx;
+}
+.user-infor-box .user-infor .top-infor .right{
+    color:#1AAD19;
+}
+.user-infor-box .left .nickname{
+   font-size: 30rpx;
+   color:#575757;
+   font-weight: bold;
+   
+}
+
+.user-infor-box .left .user-img{
+    width:50rpx;
+    height:50rpx;
+    border-radius:50%;
+    margin-right:15rpx;
+    position: relative;
+    bottom:34rpx;
+}
+.user-infor-box .bottom-infor{
+    display: flex;
+    font-size: 24rpx;
+    padding-bottom: 10rpx;
+    padding-right:10rpx;
+    color:#909090;
+}
+.user-infor-box .bottom-infor view{
+    flex: 1;
+}
+
+.user_liner{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around
+}
+.user-infor-box{
+  height: 50px;
+  width: 100%;
+  background-color: #fff;
+}
+
+
+.user_liner{
+  margin-top: 0.5rem;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around
+}
+.user_liner_pic{
+  display: flex;
+  /* width: 33%; */
+  flex-direction: row;
+  align-items: center;
+}
+.pic_style{
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+.name_text{
+  line-height: 60rpx;
+   font-size:30rpx;
+   color:#666666;
+}
+::-webkit-scrollbar
+{
+width: 0;
+height: 0;
+color: transparent;
+}

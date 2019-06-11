@@ -1,0 +1,4 @@
+<!--pages/activity/createGroup.wxml-->
+<view>
+  <image src='https://oss.yuezijie.cn/image/smallProgram/post.jpg?x-oss-process=style/w750_new' class='pic' mode="widthFix"></image>
+</view>

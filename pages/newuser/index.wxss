@@ -1,0 +1,10 @@
+/* pages/newuser/index.wxss */
+page{
+}
+.container{
+}
+.newuser-box image{
+    width:750rpx;
+    height: 7750rpx;
+    
+}

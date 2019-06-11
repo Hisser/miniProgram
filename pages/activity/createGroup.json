@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "建群拿红包",
+    "usingComponents": {
+      "shortcut": "/components/shortcut/shortcut"
+    }
+}

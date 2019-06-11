@@ -1,0 +1,120 @@
+/* pages/caculate-credit/index.wxss */
+
+.nav-tabs{
+  width: 100%;
+  height: 75rpx;
+  display: flex;  
+  background: #fff;
+ border-bottom:1px solid #CFCFCF;
+}
+.nav-tabs .default{
+    line-height:75rpx;
+    text-align:center;
+    flex:1;
+    color:#282828;
+    font-size:30rpx;   
+}
+.nav-tabs .active{  
+  line-height:75rpx;
+    text-align:center;
+    color:#fc5558;
+    flex:1;
+    border-bottom:2px solid #FE6260;
+    font-size:30rpx;    
+} 
+.main-item-box.default{  
+  display: none;  
+  flex: 1;
+}  
+.main-item-box.active{  
+  display: block; 
+   flex: 1; 
+}
+
+.can-conversion ,.submit-button{
+    background: #fff;
+
+}
+.can-conversion{
+    display: flex;
+    padding: 30rpx 0 50rpx 0;
+    border-bottom: 1px solid #DCDCDC;
+   
+}
+.subside-list{
+    flex: 1;
+    text-align: center;
+}
+.subside-list .num{
+    padding-bottom: 20rpx;
+    color:#E5423F;
+    font-size:32rpx;
+}
+.subside-list text{
+    display: block;
+}
+.subside-list .text{
+    flex: 1;
+    color:#202020;
+    font-size:32rpx;
+}
+.submit-button{
+     padding: 50rpx 0rpx;
+}
+.submit-button view{
+    
+    padding: 0  50rpx;
+}
+.submit-button .conversion-subside{
+    padding-bottom: 50rpx;
+}
+.submit-button  .text{
+    color:#070707;
+    font-size:32rpx;
+}
+
+/*
+    结算记录
+**/
+.conversion-list{
+    padding: 10rpx 30rpx;
+    background: #fff;
+    border-bottom: 1px solid #DCDCDC;
+}
+.conversion-list .imgbox image{
+    width:70rpx;
+    height:70rpx;
+}
+.conversion-list  .leftinfor,.conversion-list  .rightinfor{
+    color:#202020;
+font-size:32rpx;
+}
+.conversion-list  .rightinfor{
+    color:#909090;
+   line-height: 104rpx;
+}
+.conversion-list  .leftinfor .subsidenum text{
+    color:#FE6260;
+}
+.conversion-list  .leftinfor .time{
+    color:#909090;
+    font-size:28rpx;
+    padding-top:10rpx;
+}
+.conversion-list  .leftinfor .imgbox,.conversion-list  .leftinfor .numbox{
+    display:inline-block;
+}
+.conversion-list  .leftinfor .imgbox{
+    padding-right:20rpx;
+     line-height: 104rpx;
+     position: relative;
+     bottom:10rpx;
+}
+.conversion-list  .leftinfor .numbox{
+   
+    position: relative;
+    top:15rpx;
+}
+
+
+

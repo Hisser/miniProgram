@@ -1,0 +1,50 @@
+<import src="../template/template.wxml" />
+<view class="container">
+  <view class="list-header">
+    <view class="index-search-box dis-flex" style="position:static">
+      <navigator class="index-search flex-box" hover-class="none" openType="navigate" url="../search/index">
+        <view class="index-cont-search">
+          <icon class="text-center" color="rgba(0,0,0,0.4)" size="15" type="search"></icon>
+          <text>{{searchName}}</text>
+        </view>
+      </navigator>
+    </view>
+    <view class="store_nav_cont dis-flex b-f b-b">
+      <view bindtap="switchSortType" data-type="all" class="flex-box t-c p-r" data-index="0 " id="list-{{sort==='all'?true:0}}">
+        <text>综合</text>
+      </view>
+      <view bindtap="switchSortType" data-type="total_sales_des" class="flex-box t-c p-r" data-index="1" id="list-{{sort==='total_sales_des'?true:0}}">
+        <text> 销量</text>
+      </view>
+      <view bindtap="switchSortType" data-type="price_asc" class="flex-box t-c p-r" data-index="2" id="list-{{sort==='price_asc'?true:0}}">
+        <text class="price"> 价格</text>
+        <!-- <text class="iconfont icon-jiantou-copy tf-180 top_jiantou {{sortPrice ?'':'active'}}"></text>
+        <text class="iconfont icon-jiantou-copy bot_jiantou {{sortPrice ?'active':''}}"></text> -->
+      </view>
+
+    </view>
+
+    <view class="coupon_select dis-flex b-f b-b">
+      <view class="switch_style">
+        <text style='line-height:50px;'>仅显示优惠券商品 </text>
+      </view>
+
+      <view class="switch_style2">
+        <switch checked='{{switchFlag}}' bindchange="switchHasCoupon" type='small' checked='true' />
+      </view>
+    </view>
+
+    <scroll-view bindscrolltolower="bindDownLoad" lower-threshold="100" scroll-y="true" style="height: {{scrollHeight}}px; width: 750rpx;" class="list" wx:if="{{goodsList.length > 0}}">
+      <template is="goodsListItem" data="{{goodsList}}">
+    </template>
+    </scroll-view>
+  </view>
+
+  <view wx:if="{{!list.length && !hasMore}}" class="yoshop-notcont" style="margin-top:130px;">
+    <view class="img">
+      <image mode="aspectFit" src="../../images/no_content.png"></image>
+    </view>
+    <text class="cont">亲, 没有相关内容</text>
+  </view>
+
+</view>

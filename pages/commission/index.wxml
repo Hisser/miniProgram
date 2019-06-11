@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="contentlist">
+    <view class="contentinfo" wx:for="{{commissifoninfo}}">
+      <view class="contentleft">
+        <image src="../../images/icon-xd.png" mode="widthFix"></image>
+        <text class="sign"  wx:if="{{item.type == 1}}">积分：{{item.money}}分</text>
+        <text class="sign"  wx:if="{{item.type == 2}}">佣金：￥{{item.money}}</text>
+        <text class="sign"  wx:if="{{item.type == 3}}">补贴：￥{{item.money}}</text>
+        <text class="sign"  wx:if="{{item.type == 4}}">充值：￥{{item.money}}</text>
+        <text class="sign"  wx:if="{{item.type == 5}}">提现：￥{{item.money}}</text>
+        <text class="color-gray">{{item.remark}}</text>
+        
+      </view>
+    <view class="num" wx:if="{{item.status == 0}}">待审核</view>
+    <view class="num" wx:if="{{item.status == 1}}">正常</view>
+    <view class="num" wx:if="{{item.status == 2}}">失败
+    
+    </view>
+    <text class="color-gray" style='margin-left:48px;'>{{item.created_at}}</text>
+    </view>
+  </view>
+
+
+</view>

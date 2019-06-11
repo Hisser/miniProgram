@@ -1,0 +1,5 @@
+/* pages/activity/createGroup.wxss */
+
+.pic{
+  width: 100%;
+}

@@ -1,0 +1,9 @@
+var filter = {
+  telNumberToSecret: function (value) {
+    return value.substring(0, 3) + "****" + value.slice(-4);
+  }
+}
+// 导出对外暴露的属性
+module.exports = {
+  telNumberToSecret: filter.telNumberToSecret
+}

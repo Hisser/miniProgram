@@ -1,0 +1,46 @@
+
+<!--pages/estimate-income/index.wxml-->
+<view class="container">
+    <view class="nav-tabs"  bindtap="tabFun">
+         <view class="tab-list {{tabArr.curHdIndex=='0'? 'active' : 'default'}}" data-id="0" >结算兑换</view>
+         <view class="tab-list {{tabArr.curHdIndex=='1'? 'active' : 'default'}}" data-id="1" >结算记录</view>
+    </view>
+
+    <view class="main-list-box">
+        <view class="main-item-box {{tabArr.curBdIndex=='0'? 'active' : 'default'}}">
+            <view class="can-conversion">
+                <view class="credit subside-list">
+                    <text class="num">￥{{credit2}}</text>
+                    <text class="text">可提现佣金</text>
+                </view>
+            </view>
+            <view class="submit-button">
+                <view class="credit-withdraw">
+                <navigator url="../commissionWithdraw/index">
+                    <text class="weui_btn weui_btn_default text">佣金提现</text>
+                </navigator>
+                    
+                </view>
+            </view>
+        </view>
+        <view class="main-item-box {{tabArr.curBdIndex=='1'? 'active' : 'default'}}">
+            <view class="conversion-list" wx:for="{{ withdrawArray}}">
+                <view class="leftinfor fl">
+                    <view class="imgbox">
+                        <image src="../../images/dui.png"></image>
+                    </view>
+                    <view class="numbox">
+                        <view class="subsidenum">佣金提现： <text>{{item.money}}</text></view>
+                        <view class="time"> <text>{{item.created_at}}</text>    </view>
+                    </view>
+                </view>
+                <view class="rightinfor fr">
+                    <text class="state">{{item.status}}</text>
+                </view>
+                <view class="clearfix"></view>
+            </view>
+        </view>
+    </view>
+    
+
+</view>

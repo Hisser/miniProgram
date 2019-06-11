@@ -1,0 +1,84 @@
+
+.container {
+  padding-bottom:  60rpx;
+}
+
+.header1 {
+  padding:  20rpx;
+  font-size: 56rpx;
+  color: #f55;
+  text-align: center;
+  font-weight: 600;
+}
+
+.header2 {
+  padding: 6rpx 20rpx 20rpx;
+  font-size: 36rpx;
+  color: #f55;
+  text-align: center;
+}
+
+.content {
+  padding: 20rpx;
+  font-size: 32rpx;
+  color: #333;
+  text-align: left;
+}
+
+.content-copy {
+  margin: 20rpx;
+  font-size: 32rpx;
+  color: #333;
+  text-align: left;
+  background-color: #ddd;
+}
+
+.image {
+  padding: 20rpx;
+  width:100%;
+  text-align: center;
+}
+
+.question-first{
+  margin-top: 20rpx;
+}
+
+.question {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  padding:25rpx 0 25rpx 25rpx;
+  text-align: left;
+  background-color: #fff;
+  border-bottom: 1rpx solid #eee;
+  font-size: 32rpx;
+}
+
+.question-all-content{
+  margin-top: 20rpx;
+  margin-right: 20rpx;
+  padding:25rpx 0 25rpx 0rpx;
+  text-align: left;
+  background-color: #fff;
+  border-top: 1rpx solid #eee;
+  font-size: 32rpx;
+}
+
+
+.question-content-title{
+  padding:20rpx 0 20rpx 0rpx; 
+  text-align: left;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.question-content{
+  padding:15rpx 0 15rpx 0rpx; 
+  text-align: left;
+  font-size: 30rpx;
+}
+
+.question-jiantou{
+  padding-right:20rpx; 
+  text-align: right;
+  font-size: 30rpx;
+}

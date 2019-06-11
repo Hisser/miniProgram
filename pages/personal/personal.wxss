@@ -1,0 +1,545 @@
+/* pages/personal/personal.wxss */
+
+.container {
+  background-color: #f2f2f2;
+  display: flex
+}
+.top {
+  margin-bottom: 110px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
+.userinfo {
+  position: relative;
+  background: #fd2c29;
+  display: flex;
+  flex-direction: row;
+  height: 340rpx;
+  background-image:url("data:image/png;base64,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");
+}
+
+.userinfo-avatar {
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+  flex:2;
+  text-align: center;
+}
+
+.username_view{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  
+}
+.vip_style{
+  margin-left: 5px;
+  width: 18px;
+  height: 18px;
+}
+.userinfo-image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 5rpx solid #fff;
+  overflow: hidden;
+}
+
+
+.userinfo-nickname {
+  color: #fff;
+  font-size: 33rpx;
+}
+
+.userinfo-mobile{
+  color: #fff;
+  font-size: 28rpx;
+}
+
+.userinfo .userDetail{
+  line-height: 36rpx;
+  flex:4;
+  font-size: 32rpx;
+}
+.userinfo .inviteInfo{
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+}
+.userinfo .inviteInfo text{
+  font-size: 25rpx;
+  color:#fff;
+  border-radius:10% 
+}
+
+.userinfo .inviteInfo .copy{
+  padding:2rpx 10rpx;
+  background-color: #fff;
+  color:#000;
+  font-size: 25rpx;
+  margin-left:10rpx;
+  border-radius: 8rpx;
+}
+
+.userinfo .usertype-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0px 10px;
+  line-height: 28px;
+  flex:3;
+  align-items:flex-end;
+}
+.userinfo .member{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items:flex-start;
+}
+
+.bindPhone {
+  position: relative;
+  top: 40rpx;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 24rpx;
+  padding: 6rpx 20rpx 6rpx 20rpx;
+  border-radius: 1000px;
+}
+
+.bindPhone image {
+  width: 28rpx;
+  height: 28rpx;
+  padding-right: 10rpx;
+  position: relative;
+  bottom: 4rpx;
+}
+
+.w {
+  color:#fd2c29;
+  font-size:28rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 8rpx;
+}
+.withdraw{
+  position: absolute; 
+  top:220rpx;
+  height: 190rpx;
+  left: 19rpx;
+  box-shadow: 0 1rpx 5rpx 0px rgba(0, 0, 0, 0.05);
+  font-size: 30rpx;
+  border-top: 1rpx solid #eee;
+  border-radius: 5rpx;
+  background: #fff;
+}
+.apply-vip-box.hidden {
+  display: none;
+}
+
+.weui_cell {
+  position: relative;
+  display: flex;
+  padding: 12px 15px 10px 15px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid #dadada;
+}
+
+.weui_cell_hd {
+  display: inline-block;
+  width: 20px;
+  margin-right: 5px;
+}
+
+.weui_cell_hd image {
+  width: 100%;
+  height: 20px;
+  vertical-align: -2px;
+}
+
+.weui_cell_bd {
+  display: inline-block;
+}
+
+.weui_cell_bd_p {
+  font-size: 14px;
+  color: #737373;
+}
+
+.badge {
+  position: absolute;
+  top: 18px;
+  right: 40px;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  background: #f00;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 8px;
+}
+
+.user_type, .apply-vip text {
+  color: #f00;
+  font-size: 28rpx;
+  background: #fff;
+  padding: 6rpx 24rpx;
+  border-radius: 8rpx;
+}
+
+.invite_people {
+  font-size: 28rpx;
+  padding: 0rpx 12rpx 20rpx 0rpx;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.user_information {
+  padding-top: 20rpx;
+  text-align: center;
+  background: #fff;
+  padding-bottom: 15rpx;
+  border-top: 1px solid #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  display: flex
+}
+.cardInfo {
+   flex-direction: column;
+   margin: 18px auto;
+   padding:18px 5px;
+   width: 92%;
+  }
+
+.cardInfo .titleInfo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between ;
+  height: 30px;
+}
+
+.cardInfo .joinVip{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between ;
+  align-items: center;
+  text-align: center;
+  height: 40px;
+  background-color: rgba(240, 147, 105, 0.541);
+  margin:10px 5px;
+  padding:5px;
+}
+.cardInfo .joinVip text{
+  font-size: 12px;
+  color: rgb(71, 67, 55);
+  text-align: center;
+  padding: 3px;
+}
+
+.cardInfo .joinVip .upgrade{
+  background-color: rgb(71, 67, 55);
+  text-align: center;
+}
+.cardInfo .joinVip .upgrade text{
+  font-size: 12px;
+  color: #fd0;
+}
+
+.cardInfo .titleInfo .title{
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: bold
+}
+
+.cardInfo .boxInfo{
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #e2e2e2;
+  padding:20px 15px
+}
+.user_information .inforbox {
+  text-align: center;
+  border-right: 1px solid #e2e2e2;
+}
+
+.user_information .inforbox:last-child {
+  border-right: none;
+}
+
+.user_information .inforbox text {
+  display: block;
+  font-size: 14px;
+  color: #737373;
+}
+
+.cardInfo .earnPic{
+  width:100%;
+  border-radius: 5px;
+}
+
+.info_list {
+  background: #fff;
+  margin-top: 10px;
+  border-top: 1px solid #e2e2e2;
+}
+
+.ordinaryleader {
+  color: #fff;
+  font-size: 25rpx;
+}
+
+.tel-box {
+  line-height: 1;
+  padding: 0;
+  background: none;
+}
+.footer {
+  text-align: center;
+  padding-bottom: 20px;
+}
+/******************************/
+
+.container {
+  background-color: #f2f2f2;
+}
+
+.userInformation {
+  background: linear-gradient(to top, #ff3f79, #ff9c62);
+  text-align: center;
+  position: relative;
+}
+
+.userInformation .userBox1 {
+  position: absolute;
+  top: 30rpx;
+  width: 100%;
+}
+
+.userInformation .userBox1 .topUserBox1 {
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.userInformation .userBox1 .topUserBox1 .shopName {
+  padding-bottom: 16rpx;
+}
+
+.userInformation .userBox1 .topUserBox1 {
+  padding-bottom: 40rpx;
+}
+
+.userInformation .userBox1 .topUserBox {
+  padding-bottom: 30rpx;
+}
+
+.userInformation .userBox1 .bottomUserBox {
+  padding-bottom: 26rpx;
+}
+
+.userInformation .userBox1 .topUserBox .topUserBox-item {
+  display: inline-block;
+}
+
+.userInformation .userBox1 .topUserBox1 .shopGrade {
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.userInformation .userBox1 .orderFormBox input {
+  background: #ff9c62;
+  vertical-align: middle;
+  border: none;
+  border-radius: 8rpx;
+  -webkit-appearance: none;
+  color: #fff;
+  font-size: 28rpx;
+  padding: 5rpx 10rpx;
+}
+
+.orderFormBox {
+  padding: 0rpx 30rpx;
+}
+
+.userInformation .userBox1 .bottomUserBox .bottomUserBox-item {
+  margin-right: 20rpx;
+  padding-right: 20rpx;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 24rpx;
+  padding: 10rpx 20rpx 10rpx 20rpx;
+  border-radius: 1000px;
+}
+.userInformation .userBox1 .bottomUserBox .bottomUserBox-item .copy {
+  background-color: #fff;
+  width: 30px;
+}
+.userInformation .userBox1 .bottomUserBox .bottomUserBox-item image {
+  width: 28rpx;
+  height: 28rpx;
+  padding-right: 10rpx;
+  position: relative;
+  bottom: 4rpx;
+}
+
+.userInformation .backImg {
+  width: 750rpx;
+  height: 230rpx;
+}
+
+.apply-vip-box.hidden {
+  display: none;
+}
+
+.weui_cell {
+  position: relative;
+  display: flex;
+  padding: 12px 15px 10px 15px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid #dadada;
+}
+
+.imgBox.active {
+  position: relative;
+  top: 30rpx;
+}
+
+.weui_cell_hd {
+  display: inline-block;
+  width: 20px;
+  margin-right: 5px;
+}
+
+.weui_cell_hd image {
+  width: 100%;
+  height: 20px;
+  vertical-align: -2px;
+}
+
+.weui_cell_bd {
+  display: inline-block;
+}
+
+.weui_cell_bd_p {
+  font-size: 14px;
+  color: #737373;
+}
+
+.badge {
+  position: absolute;
+  top: 18px;
+  right: 40px;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  background: #f00;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 8px;
+}
+
+.user_type, .apply-vip text {
+  color: #f00;
+  font-size: 28rpx;
+  background: #fff;
+  padding: 6rpx 20rpx;
+  border-radius: 8rpx;
+}
+
+.invite_people {
+  font-size: 28rpx;
+  padding: 0rpx 12rpx 0rpx 0rpx;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.invite_people .name {
+  padding-right: 20rpx;
+}
+
+.user_information .title {
+  color: #333;
+  font-size: 28rpx;
+  text-align: left;
+  padding-left: 20rpx;
+  padding-bottom: 40rpx;
+}
+
+.user_information .inforbox {
+  text-align: center;
+  width: 33%;
+}
+.user_information .inforbox.order {
+  width: 50%;
+}
+
+.user_information  .inforbox .num {
+  font-size: 38rpx;
+  color: #ee6720;
+}
+
+.user_information  .inforbox .detail {
+  border: 2rpx solid #ee6720;
+  padding: 0rpx 40rpx;
+  color: #ee6720;
+  display: inline;
+  border-radius: 10rpx;
+}
+
+.amount-num {
+  color: #ee6720;
+  font-size: 38rpx;
+}
+
+.user_information .inforbox text {
+  display: block;
+  font-size: 12px;
+  color: #737373;
+}
+.nav-tabs{
+  width: 100%;
+  height: 75rpx;
+  display: flex;  
+  background: #fff;
+  border:1px solid #FE6260;
+}
+.nav-tabs.active{
+	display: flex;
+}
+
+.nav-tabs .tab-list{
+	width:20%;
+	text-align: center;
+}
+.nav-tabs .tab-list {
+    line-height:75rpx;
+    text-align:center;
+    flex:1;
+    color:#FE6260;
+    font-size:30rpx; 
+    border-right:1px solid #FE6260;
+}
+.nav-tabs .tab-list:last-child {
+  border-right: none;
+}
+
+.nav-tabs .tab-list.active{
+	color:#fff;
+  background-color:#FE6260; 
+}
+.appiyBox {
+  position: relative;
+  right: 20rpx;
+}
+
+.info_list {
+  margin-top: 20rpx;
+  border-top: 1px solid #e2e2e2;
+}

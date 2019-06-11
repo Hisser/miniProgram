@@ -1,0 +1,33 @@
+<!--pages/login.wxml-->
+<view class="container">
+  <view class="wechatapp">
+    <image class="logo" src="/images/logo.png"></image>
+
+    <text class="subtitle">Z H O N G X I A N G</text>
+
+    <text style="font-weight:bold;">京东社交电商战略合作伙伴</text>
+    <!-- <view class="header">
+      <open-data class="" type="userAvatarUrl"></open-data>
+    </view> -->
+    <!-- <open-data class="user-header-cont-name" lang="zh_CN" type="userNickName"></open-data> -->
+  </view>
+
+  <block wx:if="{{showMobile}}">
+    <button class="login-btn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">使用手机号码一键登录</button>
+  </block>
+  <block wx:else>
+    <block wx:if="{{showCode}}">
+      <input class="inviteCode" maxlength="8" placeholder="请输入邀请码" bindinput="bindInviteCode"></input>
+      <view class="auth-subtitle" bindtap='noCode'>没有邀请码?</view>
+      <button type="default" bindtap="checkCode">下一步</button>
+    </block>
+    <block wx:if="{{!showCode}}">
+      <!-- <view class="auth-title">申请获取以下权限</view>
+      <view class="auth-subtitle">获得你的公开信息（昵称、头像等）</view> -->
+      <button class="login-btn" openType="getUserInfo" lang="zh_CN" bindgetuserinfo="authorLogin">授权登录</button>
+    </block>
+  </block>
+  <view class='footer'>
+    <text>京东99%的商品都有优惠券或者返利</text>
+  </view>
+</view>

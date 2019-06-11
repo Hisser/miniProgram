@@ -1,0 +1,130 @@
+<view class="container m-b5">
+  <view class="goods-detail-box">
+    <view class="header f-28 col-3">
+      <view class="header_col">
+        <view bindtap="bindHeaderTap" class="{{dataType==='new_user'?'active':''}}" data-type="new_user">新人上手</view>
+      </view>
+      <view class="header_col">
+        <view bindtap="bindHeaderTap" class="{{dataType==='tutorial'?'active':''}}" data-type="tutorial">赚钱教程</view>
+      </view>
+      <view class="header_col">
+        <view bindtap="bindHeaderTap" class="{{dataType==='share_matter'?'active':''}}" data-type="share_matter">分享素材</view>
+      </view>
+    </view>
+    <scroll-view scroll-y="{{true}}" scroll-top="{{scrollTop}}">
+      <view class="wrapper">
+        <view wx:if="{{dataType==='new_user'}}">
+          <view wx:if="{{list_newUser.length}}">
+            <view class="m-top20 " wx:for="{{list_newUser}}" wx:key="this" wx:for-index="index">
+              <view class="order-box b-f">
+                <view class="order-header dis-flex">
+                  <view class="flex-box t-l">
+                    <text class="title">{{item.title}}</text>
+                  </view>
+                </view>
+              </view>
+              <view class="order-box b-f">
+                <view class="order-cont dis-flex">
+                  <view class="order-num">
+                    <rich-text nodes="{{item.content}}"></rich-text>
+                  </view>
+                </view>
+              </view>
+
+               <view class="item-copy"  wx:if="{{item.copy}}">
+                 <text class="item-copy-title">{{item.copy.title}}</text>
+                 <text class="item-copy-wechat">{{item.copy.wechat}}</text>
+                 <text class="item-copy-operate" bindtap="copyWechat" data-value="{{item.copy}}">{{item.copy.operate}}</text>
+              </view>
+
+              <view class="order-box b-f">
+                <view class="order-cont dis-flex">
+                 <view wx:if="{{item.type=='contact'}}">      <!--  开通客服 -->
+                    <button size='mini' open-type="contact"  class="{{item.operate ?'operate-btn':''}}">{{item.operate}}</button>
+                  </view>
+                  <view wx:elif="{{item.type=='share'}}">      <!--  去发展下级 -->
+                    <button size='mini' open-type="share"  class="{{item.operate ?'operate-btn':''}}">{{item.operate}}</button>
+                  </view>
+                   <view wx:else>
+                    <button size='mini' class="{{item.operate ?'operate-btn':''}}" bindtap="bindOperate" data-value="{{item}}">{{item.operate}}</button>
+                  </view>
+
+                  <view class="video" bindtap="bindWatchVideo" data-value="{{item}}">
+                    <image src="../../images/video_start.png" class="video-image" /> 查看教学视频
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view wx:else>
+            <view class="yoshop-notcont">
+              <text class="iconfont icon-ziyuan"></text>
+              <text class="cont">亲，没有信息哦！</text>
+            </view>
+          </view>
+        </view>
+
+        <view wx:elif="{{dataType==='tutorial'}}">
+          <view wx:if="{{list_tutorial.length}}">
+            <view wx:for="{{list_tutorial}}" wx:key="this">
+              <view class="menus-list" bindtap="bindTotutorial"  data-index="{{index}}">
+                <view class="menus-item dis-flex b-f"  data-index="{{index}}">
+                  <view class="flex-y-center"  data-index="{{index}}">
+                    <text class="menus-item__name f-30"  data-index="{{index}}">{{item.title}}</text>
+                  </view>
+                  <view class="menus-list-item-right flex-box flex-x-end flex-y-center"  data-index="{{index}}">
+                    <text class="iconfont icon-xiangyoujiantou f-30"  data-index="{{index}}"></text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view wx:else>
+            <view class="yoshop-notcont">
+              <text class="iconfont icon-ziyuan"></text>
+              <text class="cont">亲，没有教程哦！</text>
+            </view>
+          </view>
+        </view>
+
+        <view wx:elif="{{dataType==='share_matter'}}">
+          <view wx:if="{{list_matter.length}}">
+            <view class="matter-item" wx:for="{{list_matter}}" wx:key="this">
+              <view class="matter-title b-f dis-flex">
+                <image class="matter-image" src="../../images/logo.png" />
+                <view class="matter-title-content ">{{item.title}}</view>
+              </view>
+
+              <view class="order-box b-f">
+                <view class="order-cont dis-flex">
+                  <view class="matter-content b-f">
+                    <view wx:for="{{item.content}}" wx:key="this">
+                      {{item.content}}
+                    </view>
+                    <view wx:if="{{item.image}}">
+                      <text class="matter-image-tips">#点击图片获取您的专属海报#</text>
+                      <image class="matter-image-last" src="{{item.image}}" mode="widthFix" bindtap='createMiniInvitePoster' data-value="{{item.image}}"/>
+                    </view>
+                  </view>
+                  <view>
+                    <view class="matter-copy" bindtap="copyContent" data-value="{{item}}">复制文字</view>
+                  </view>
+
+                </view>
+              </view>
+
+            </view>
+          </view>
+          <view wx:else>
+            <view class="yoshop-notcont">
+              <text class="iconfont icon-ziyuan"></text>
+              <text class="cont">亲，没有素材哦！</text>
+            </view>
+          </view>
+        </view>
+
+
+      </view>
+    </scroll-view>
+  </view>
+</view>

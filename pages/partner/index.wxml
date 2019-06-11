@@ -1,0 +1,68 @@
+<!--pages/partner/index.wxml-->
+<wxs module="filter" src="./util.wxs"></wxs>
+<view class="container">
+    <view class="nav-tabs-box" bindtap="tabFun">
+        <view class="nav-tabs" >
+            <!-- <view class="tab-list {{tabArr.curHdIndex=='0'? 'active' : 'default'}}" data-id="0" >
+            我的粉丝
+            </view> -->
+            <view class="tab-list {{tabArr.curHdIndex=='1'? 'active' : 'default'}}" data-id="1" >直属注册用户</view>
+            <view class="tab-list {{tabArr.curHdIndex=='2'? 'active' : 'default'}}" data-id="2" >直属超级会员</view>
+        </view>
+    </view>
+    <view class="alluser-infor-box">
+        <view class="user-infor-box-item {{tabArr.curBdIndex=='1'? 'active' : 'default'}}" >
+            <view class="usernum">
+                直属注册粉丝总数：<text>{{usercount1}}</text>
+            </view>
+             <scroll-view scroll-top="0" scroll-y="true"  class="list" bindscrolltolower="bindDownLoad"  lower-threshold="100">
+            <view class="user-infor-box"  wx:for="{{userInforArray1}}">
+                <view class="user-infor">
+                    <view class="user_liner">
+                        <view class='user_liner_pic'>
+                        <image src='{{item.userIco}}' class='pic_style'></image>
+                        </view>
+                        <view  class='user_liner_pic'>
+                          <text class='name_text'> {{item.nickName}}</text>
+                        </view>
+                        <view  class='user_liner_pic'>
+                        <text class='name_text'>{{filter.dateFormat(item.addTime,'yyyy/MM/dd')}}</text>
+                        </view>
+                    </view>
+
+                </view>
+              </view>
+  </scroll-view>
+
+
+              <view wx:if="{{!hasMore}}" style='display:block;text-align:center;margin-top:10px;margin-bottom:10px; color:#666666'>没有更多啦</view>
+        </view>
+ <view class="user-infor-box-item {{tabArr.curBdIndex=='2'? 'active' : 'default'}}" >
+            <view class="usernum">
+                直属超级会员总数：<text>{{usercount2}}</text>
+            </view>
+            <scroll-view scroll-top="0" scroll-y="true" class="list" bindscrolltolower="bindDownLoad2"  lower-threshold="100">
+            <view class="user-infor-box"  wx:for="{{userInforArray2}}">
+                <view class="user-infor">
+                    <view class="user_liner">
+                        <view class='user_liner_pic'>
+                        <image src='{{item.userIco}}' class='pic_style'></image>
+                        </view>
+                        <view  class='user_liner_pic'>
+                          <text class='name_text'> {{item.nickName}}</text>
+                        </view>
+                        <view  class='user_liner_pic'>
+                        <text class='name_text'>{{filter.dateFormat(item.addTime,'yyyy/MM/dd')}}</text>
+                        </view>
+                    </view>
+
+                </view>
+              </view>
+             </scroll-view>   
+              <view wx:if="{{!hasMore}}" style='display:block;text-align:center;margin-top:10px;margin-bottom:10px; color:#666666'>没有更多啦</view>
+        </view>
+    </view>
+
+
+</view>
+

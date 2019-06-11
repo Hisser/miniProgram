@@ -1,0 +1,294 @@
+.header {
+  width: 100%;
+  height: 44px;
+  border-top: 1rpx solid #f4f4f4;
+  border-bottom: 1rpx solid #e4e4e4;
+  display: flex;
+  background: #fff;
+  line-height: 44px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  font-weight: 700;
+}
+
+.header view {
+  flex: 1;
+  text-align: center;
+}
+
+.header_col {
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}
+
+.header_col .active {
+  color: #fd4a5f;
+  border-bottom: 6rpx solid #fd4a5f;
+}
+
+.wrapper {
+  margin-top: 54px;
+}
+
+.order-box {
+  padding: 0 15px;
+}
+
+.order-header {
+  /* border-bottom: 1rpx solid #e4e4e4; */
+  padding-top: 10rpx;
+}
+
+.order-header .title {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 700;
+}
+
+.order-header .cont {
+  /* display: block; */
+  font-size: 30rpx;
+  color: #fd4a5f;
+}
+
+.order-cont {
+  padding: 15rpx 0;
+  justify-content: space-between;
+}
+
+.order-cont .order-num text, .order-cont .order-time text {
+  color: #777;
+  font-size: 26rpx;
+}
+
+.operate-btn {
+  border-radius: 30rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  color: #fff;
+  background-color: #f66;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.video {
+  color: #77f;
+  font-size: 30rpx;
+  text-align: right;
+}
+
+.video-image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.order-shop {
+  padding: 16rpx 0 16rpx 0;
+}
+
+.order-shop-left, .order-shop-left image {
+  width: 160rpx;
+  height: 160rpx;
+  /* border: 1rpx solid #e4e4e4; */
+  margin-right: 15rpx;
+  display: inline-block;
+  background: #fff;
+}
+
+.order-shop .num {
+  float: right;
+}
+
+.order-btn {
+  padding: 18rpx 0 18rpx 0;
+}
+
+.order-btn .order-left {
+  flex: 3;
+}
+
+.order-btn .order-left text, .order-btn .order-left .text {
+  font-size: 30rpx;
+}
+
+.order-btn .order-left .text {
+  color: #777;
+}
+
+.order-btn .order-right {
+  flex: 3;
+}
+
+.order-list-box .left {
+  flex: 4;
+  overflow: hidden;
+  position: relative;
+}
+
+.order-list-box .right {
+  flex: 1;
+}
+
+.goods-number {
+  position: absolute;
+  right: 12px;
+  top: 35%;
+  font-size: 28rpx;
+  color: #777;
+}
+
+.btn-default {
+  border-radius: 4px;
+  border: 1rpx solid #ccc;
+  padding: 6rpx 20rpx;
+  font-size: 28rpx;
+  color: #555;
+  float: right;
+}
+
+.btn-main {
+  border-radius: 4px;
+  border: 1rpx solid #fd4a5f;
+  padding: 6rpx 20rpx;
+  font-size: 28rpx;
+  color: #fd4a5f;
+  margin-left: 10rpx;
+  float: right;
+}
+
+.user-orderJtou {
+  font-size: 24rpx;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -20rpx;
+  color: #888;
+}
+
+.order-img_list {
+  background: #fff;
+  border-top: 1rpx solid #f1f1f1;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+
+.order-right-name {
+  position: absolute;
+  top: 50%;
+  left: 180rpx;
+  font-size: 30rpx;
+  color: #555;
+  width: 100%;
+  margin-top: -46rpx;
+  line-height: 1.6;
+}
+
+.menus-list .menus-item {
+  position: relative;
+  padding: 28rpx 28rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.menus-list .menus-item .menus-item__name {
+  color: #333;
+  margin-left: 20rpx;
+}
+
+.menus-list-item-right {
+  text-align: right;
+}
+
+.matter-item {
+  margin-top: 10rpx;
+  background-color: #fff;
+}
+
+.matter-image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+}
+
+.matter-title {
+  font-size: 30rpx;
+  padding: 15rpx 15px;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.matter-title-content {
+  font-size: 30rpx;
+  padding-left: 15rpx;
+  padding-top: 40rpx;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.matter-copy {
+  font-size: 30rpx;
+  color: #f55;
+  border-radius: 25rpx;
+  border: 1rpx solid #f55;
+  padding: 2rpx 8px;
+  vertical-align: middle;
+  text-align: center;
+  width: 130rpx;
+  height: 45rpx;
+}
+
+.matter-content {
+  font-size: 32rpx;
+  padding: 15rpx 0px;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.matter-image-last {
+  width: 320rpx;
+  padding: 15rpx 0px;
+}
+
+.matter-image-tips {
+  color: rgb(233, 180, 122);
+  font-size: 30rpx;
+  padding: 15rpx 0px;
+}
+
+.cell-content-normal {
+  display: inline-block;
+  text-align: left;
+  /* word-break: keep-all; */
+  word-wrap: break-word;
+}
+
+.cell-content-red {
+  display: inline;
+  color: #f00;
+  font-weight: 700;
+  text-align: left;
+  padding: 0rpx;
+  margin: 0rpx;
+}
+
+.item-copy {
+  font-size: 14px;
+  background-color: #fff;
+  padding: 0 30rpx;
+}
+
+.item-copy-title {
+  font-size: 14px;
+}
+
+.item-copy-wechat {
+  font-size: 15px;
+  color: #f00;
+  font-weight: 700;
+}
+
+.item-copy-operate {
+  font-size: 14px;
+  margin-left: 20rpx;
+  color: #00f;
+  text-decoration: underline;
+}

@@ -1,0 +1,181 @@
+/* 用户信息 */
+@font-face {
+    font-family: 'iconfont';
+    src: url(data:application/font-woff2;charset=utf-8;base64,d09GMgABAAAAAARcAA0AAAAACSQAAAQFAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP0ZGVE0cGh4GVgCCUhEICoVghRILDgABNgIkAxQEIAWFCAdPG+AHUVRu8mQ/E+w2PgdgwXRaC3tw6hVFXxsFz1Nu+f5ENgysSs3cE6jbtSfl+er2/t1OFFtSIklEWQwJJwlsw9fr73MHW9cdVYvju/hjv1kRT8RfEcv08lCPHIkmJokjkwiJxBFJIpZMtpW2W2jLdTFPgXa1JL7rxIMAAXhbczgAz7ItH60+WkAAJABFGCzCBApIIQ8W1K3uAguIn5efwnFAsSbq0IZnta5U/HxfooyJ/yfSVkZBA4EFDEqTlkHXVQl7oKkgcDgUPvs+x32J+v+fID25ZJJE6C5ZQJQ6BqDgzyOI90k3CoANIAAiwCeQCwAwARhhstfk/InhgYAvMiKAJYpjXBeex1DIwWA+bOrOlgcKMsmhEDKHniefmHOzzisOpK5JWZ179e3qs8vudeNl2bI5K0SWb8izx7/jWPKydSt3xu28mDaRsa050FQn6GRJpPjjycTZeyxdiiq/ljFpeWv3I7xPDH1x8PMFgwqF7Hl03dq6c+KuOXsm7W6RpLOt5ni5ymY/rV33tWJ1XehaqpmrWvPO7FhKF0WEUfGc+WfTlp9nFOcY5PfmeUBEO29EjXS1M2zhgfTs3z9djQy1twDg2b9/jfS1028BAEJFeoa8Jf3X20/+vd9ZqQXCNo2LqtrzomiBKj70G39Pi72g2KwCBc88OmDs6/VyyKyAfhX3SodfL/5SBnVeUcuyrZIzrzoNB89E52yzl/B/88K7OlHfjXM8fXOumZZl0tRrli2gsHYTK9BlwCHjx0/zkGr48YOUm4yI8vt5aH3BVTmpS7B261dSdZkypYvKVSs51G9807yVaLcXLDigrDTq27eRNBYyQhqVVb3nz+9DyxU8F/+qKM2aCeQVAciMPMq1lhEjBPLWFCCDKuPoUk1/PwAIEGw97FEdIsv+cvwm+892BXqO8cioCDgUAMGe4VEAVMgUNGgsZuH/n8BERQVUIsDWmw1AAU2D/wAAxHiNAIB4eQkA4WhKAChh+hEABscMAsDk2EwAWPyuIABsjncIAC1PKiMA/GKzHIOUD8iNiCWiVGYpEdqxDFGGoU38QpYlwR6WLcoDltbc99F+2dMfrYrBuulkqMrbVUadjeLvpYsB+uteYygN/UxEeDQJ/51fnEZaimdDY930MExfnQzGn+8KrV+4yN9cN4MN0Ss5o0LyK4hr5soL5S/YFl2jen/dDN7mMUMM10NhQw3VXUbdDTZAPxlV76NTN331NUBGA4u/01s3XQyVH69bfIcM71F46NDuV9nCd4uFl7rSvzCboefwjQ1UWgEFdB/YnF+XKTXcAmm6txaeRWScnkrRLNpuI1SUGGJal4GmXtYxPyyuS7eunQb07NS/R76e3UYPC8A0du4EAAAA) format('woff2'),
+        url(data:application/font-woff;charset=utf-8;base64,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) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-about:before {
+  content: "\e614";
+}
+
+.icon-wenti:before {
+  content: "\e609";
+}
+
+.icon-cedaohang-hezuohuoba:before {
+  content: "\e710";
+}
+.user {
+  position: relative;
+  background: #fff;
+  /* margin-bottom: 150rpx; */
+}
+
+.user-header {
+  display: flex;
+  padding-top: 1px;
+  width: 100%;
+  height: 310rpx;
+  align-content: center;
+  /* background-color: #fd0; */
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: auto 100%;
+}
+.tel{
+  background-color: red;
+  width: 50%;
+  height: 20px;
+
+}
+
+.user-header .user-header-cont {
+  display: flex;
+  margin: auto;
+  margin-bottom: 135rpx;
+  width: 79%;
+  align-items: center;
+}
+
+.user-header .user-header-cont .user-header-avatar {
+  display: block;
+  margin-right: 30rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 5rpx solid #fff;
+  overflow: hidden;
+}
+.user_hearder_right{
+  width: 200rpx;
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.telStyle{
+  font-size: 12px;
+}
+
+.havePhone{
+  font-size: 32rpx;
+}
+
+/* 订单导航栏 */
+
+.order-navbar {
+  position: absolute;
+  left: 19rpx;
+  bottom: -125rpx;
+  margin: auto;
+  padding: 15rpx 0;
+  width: 95%;
+  box-shadow: 0 1rpx 5rpx 0px rgba(0, 0, 0, 0.05);
+  font-size: 30rpx;
+  border-top: 1rpx solid #eee;
+  border-radius: 5rpx;
+  background: #fff;
+}
+
+.order-navbar-header {
+  margin: auto;
+  padding-bottom: 10rpx;
+  width: 91%;
+  height: 70rpx;
+  border-bottom: 1px solid #eee;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-navbar-footer {
+  width: 100%;
+  padding: 10rpx 0px;
+}
+
+.order-navbar-footer .order-navbar-item .order-navbar__icon {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  padding: 10rpx 0;
+  color: #000;
+  font-size: 36rpx;
+}
+
+.order-navbar-footer .order-navbar-item .order-navbar__name {
+  display: block;
+  font-size: 24rpx;
+  color: #666;
+  text-align: center;
+  margin-right: 10rpx;
+}
+
+.order-navbar-footer .order-navbar-item .order-badge {
+  position: absolute;
+  top: 0;
+  right: 55rpx;
+  font-size: 22rpx;
+  background: #ff495e;
+  text-align: center;
+  line-height: 28rpx;
+  color: #fff;
+  border-radius: 100%;
+  min-height: 30rpx;
+  min-width: 30rpx;
+  padding: 1rpx;
+}
+
+/* 菜单列表 */
+.menus-list{
+  margin-bottom:20px;
+}
+.menus-list .menus-item {
+  position: relative;
+  padding: 28rpx 28rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.menus-list .menus-item .menus-item__name {
+  color: #444;
+  margin-left: 20rpx;
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-about:before {
+  content: "\e614";
+}
+
+.icon-wenti:before {
+  content: "\e609";
+}
+
+.icon-cedaohang-hezuohuoba:before {
+  content: "\e710";
+}

@@ -1,0 +1,46 @@
+<!--haojk/pages/commissionWithdraw/index.wxml-->
+<view class="container">
+  <view class=" main-box">
+
+    <form bindsubmit="formSubmit" report-submit="true">
+      <view class='view-top-line'>
+        <view class='withdraw-item'>
+          <view class='withdraw-title'>
+            总金额
+          </view>
+          <view class='withdraw-value'>
+            <text class='withdraw-value-text'>{{total}} 元</text>
+          </view>
+        </view>
+        <view class='view-line'> </view>
+
+        <view class='withdraw-item'>
+          <view class='withdraw-title'>
+            提现金额
+          </view>
+          <view class='withdraw-input-value'>
+            <input bindblur="changeInput" focus='true' value='{{inputWithdraw}}' type="number" class="fl" placeholder-style="color:#CCCCCF;" placeholder="请输入提现金额" maxlength='8' />
+            <text class="withdraw-input-unit">元</text>
+
+          </view>
+        </view>
+
+        <view class='view-line'> </view>
+
+        <view>
+          <view class='withdraw-all' bindtap="fillAllMoney">
+            全部提现
+          </view>
+        </view>
+
+        <view class='withdraw-btn'>
+          <button class='withdraw-btn-btn' formType="submit">提现到微信钱包</button>
+        </view>
+
+      </view>
+
+      
+
+    </form>
+  </view>
+</view>

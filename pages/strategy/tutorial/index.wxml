@@ -1,0 +1,52 @@
+<!--pages/strategy/tutorial/index.wxml-->
+<view class='container'>
+  <view wx:for="{{tutorial}}" wx:key="this" wx:for-index="index">
+    <view wx:if="{{item.type === 'herder1'}}">
+      <view class="header1">{{item.content}}</view>
+    </view>
+
+    <view wx:elif="{{item.type === 'herder2'}}">
+      <view class="header2">{{item.content}}</view>
+    </view>
+    <view wx:elif="{{item.type === 'content'}}">
+      <view class="content">{{item.content}}</view>
+    </view>
+    <view wx:elif="{{item.type === 'image'}}">
+      <view class="dis-flex">
+        <image class="image" src="{{item.content}}" mode='widthFix' />
+      </view>
+    </view>
+    <view wx:elif="{{item.type === 'content-copy'}}">
+      <view class="content-copy" bindtap="bindCopyContent" data-content="{{item.content}}">{{item.content}}</view>
+    </view>
+
+    <view wx:elif="{{item.type === 'question'}}">
+      <view class="question {{index==0 ? 'question-first':null}}">
+        <view class="dis-flex">
+
+          <view class="question-title  flex-box" bindtap="expandContent" data-index="{{index}}"> {{item.title}}
+          </view>
+          <view class="question-jiantou flex-box" bindtap="expandContent" data-index="{{index}}"> {{questionVisible[index] ? '﹀' : '︿'}} </view>
+        </view>
+
+        <view class="question-all-content" wx:if="{{questionVisible[index]}}">
+          <view wx:for="{{tutorial[index].content}}" wx:for-item="cell" wx:for-index="cellindex" wx:key="ques">
+            <view wx:if="{{cell.type === 'title'}}">
+              <view class="question-content-title"> {{cell.content}} </view>
+            </view>
+
+            <view wx:elif="{{cell.type === 'content'}}">
+              <view class="question-content"> {{cell.content}} </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view wx:else>
+    </view>
+
+    <view></view>
+
+  </view>
+</view>

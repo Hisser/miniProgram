@@ -1,0 +1,39 @@
+<!--pages/vip/vipright.wxml-->
+<view class='main'>
+  <view class="view">
+    <text class="text_heard">注册用户·省钱</text>
+  </view>
+  <view class="view">
+    <text class="text_heard2">会员门槛</text>
+  </view>
+  <view class="view">
+    <text class="text_heard3">零门槛，注册即可成为注册用户，要成为超级会员需要先注册再升级</text>
+  </view>
+  <view class="view">
+    <text class="text_heard2">会员权益</text>
+  </view>
+  <view class="view">
+    <text class="text_heard3">京东99%的商品都有领券或返利优惠，享受领券后内购价购买，或者无券的商品享受购买后返利省钱。您可以在京东选好商品，如果有优惠券先领了优惠券再来芬香下单，依然享受返利，比京东成交价更低</text>
+  </view>
+  <view class="view">
+    <text class="text_heard">超级会员·省钱且赚钱</text>
+  </view>
+    <view class="view">
+    <text class="text_heard2">会员门槛</text>
+  </view>
+  <view class="view">
+    <text class="text_heard3">你的直属注册用户达到30人会自动升级超级会员。你还可以拉一个人数大于50且专门用于购物推广的微信群，在会员页面点【立即升级-建群升级】,上传截图审核通过后接口升级超级会员</text>
+  </view>
+  <view class="view">
+    <text class="text_heard2">会员权益</text>
+  </view>
+  <view class="view">
+    <text class="text_heard3">1.京东99%的商品都有领券或者返利优惠，享受领取后内部价购买，或者无券的商品享受购买后返利省钱，比注册用户自购能省更多</text>
+  </view>
+   <view class="view">
+    <text class="text_heard3">2.获得你的每个直属注册粉丝自己购物清单产生的佣金，获得你群或者朋友圈主动推广成单产生的佣金</text>
+  </view>
+   <view class="view">
+    <text class="text_heard3">3.获得你的每个直属超级会员推广收益的20%,作为平台给你的推荐奖励收益</text>
+  </view>
+</view>

@@ -1,0 +1,81 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/strategy/tutorial/index",
+    "pages/strategy/index",
+    "pages/search/index",
+    "pages/category/index",
+    "pages/activity/index",
+    "pages/activity/fuli",
+    "pages/activity/createGroup",
+    "pages/goods/index",
+    "pages/searchresult/index",
+    "pages/logs/logs",
+    "pages/template/template",
+    "pages/personal/personal",
+    "pages/partner/index",
+    "pages/estimate-income/index",
+    "pages/myorder/index",
+    "pages/newuser/index",
+    "pages/commission/index",
+    "pages/commissionWithdraw/index",
+    "pages/caculate-credit/index",
+    "pages/user/index",
+    "pages/user/help",
+    "pages/login/login",
+    "pages/strategy/video/index",
+    "pages/album/album",
+    "pages/upgrade/upgrade",
+    "pages/vip/vipright"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "众享.京东优惠",
+    "navigationBarTextStyle": "black",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#e12830",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabBar/shouye.png",
+        "selectedIconPath": "images/tabBar/shouye.png"
+      },
+      {
+        "pagePath": "pages/category/index",
+        "text": "分类",
+        "iconPath": "images/tabBar/fenlei.png",
+        "selectedIconPath": "images/tabBar/fenlei.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "VIP会员",
+        "iconPath": "images/tabBar/vip.png",
+        "selectedIconPath": "images/tabBar/vip.png"
+      },
+      {
+        "pagePath": "pages/strategy/index",
+        "text": "攻略",
+        "iconPath": "images/tabBar/gonglue.png",
+        "selectedIconPath": "images/tabBar/gonglue.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "images/tabBar/my.png",
+        "selectedIconPath": "images/tabBar/my.png"
+      }
+    ],
+    "position": "bottom"
+  },
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": [
+    "wx13e41a437b8a1d2e",
+    "wx91d27dbf599dff74"
+  ]
+}

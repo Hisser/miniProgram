@@ -1,0 +1,9 @@
+<!--pages/album/album.wxml-->
+<import src="../template/template.wxml" />
+ <!-- 商品列表  -->
+<view>
+ <scroll-view bindscrolltolower="bindDownLoad" lower-threshold="100" scroll-y="true" style="height: {{scrollHeight}}px; width: 750rpx;" class="list" wx:if="{{goodsList.length > 0}}">
+    <template is="goodsListItem" data="{{goodsList,grade}}">
+    </template>
+  </scroll-view>
+</view>

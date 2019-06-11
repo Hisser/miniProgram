@@ -1,0 +1,157 @@
+/* pages/myorder/index.wxss */
+
+.nav-tabs {
+  width: 100%;
+  height: 75rpx;
+  display: flex;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+
+.nav-tabs.active {
+  display: flex;
+}
+
+.nav-tabs .tab-list {
+  width: 20%;
+  text-align: center;
+}
+
+.nav-tabs .tab-list {
+  line-height: 75rpx;
+  text-align: center;
+  flex: 1;
+  color: #585858;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.nav-tabs .tab-list.active {
+  color: #fe6260;
+}
+
+
+.bottomline.active {
+  display: block;
+  width: 80rpx;
+  height: 4rpx;
+  background: #ff5e53;
+  position: relative;
+  bottom: 4rpx;
+  margin: 0 auto;
+}
+
+.bottomline.default {
+  display: none;
+}
+
+
+.order-item {
+  background-color: #fff;
+  margin: 20rpx;
+  padding: 16rpx;
+  font-size: 32rpx;
+}
+
+.order-item-time {
+  display: flex;
+  align-items: center;
+}
+
+.order-item-createTime {
+  font-size: 32rpx;
+  flex: 4;
+  color:#888;
+}
+
+.order-item-status {
+  flex: 1;
+  text-align: center;
+  color:rgb(2, 248, 35);
+}
+
+.order-status{
+  border: 1rpx solid #79cf3a ;
+  border-radius: 20rpx;
+  margin-bottom:5rpx;
+}
+
+.item-line{
+  display: block;
+  width: 100%;
+  height: 1rpx;
+  background: #ddd;
+  position: relative;
+  bottom: 1rpx;
+}
+
+.order-item-payprice {
+  font-size: 32rpx;
+  flex: 1;
+  text-align: left;
+}
+
+.order-item-commission {
+  flex: 1;
+  text-align: right;
+}
+
+.order-payprice {
+  text-align: center;
+  color:#888;
+  margin-right: 100rpx;
+}
+
+.order-commission {
+  text-align: center;
+  color:#888;
+  margin-left: 100rpx;
+}
+
+.text-balck{
+  color:#000;
+  font-weight:500;
+}
+
+.goods-image{
+  width:200rpx;
+  height:200rpx;
+  padding: 20rpx 20rpx 20rpx 0;
+}
+
+.order-item-goods{
+  flex:1;
+}
+
+.order-item-goods-title{
+  flex:3;
+  text-align: center;
+
+
+}
+
+.order-goods-title{
+  text-align: left;
+  padding-left:30rpx;
+
+    /* 显示多行 */
+  display:-webkit-box; 
+  overflow:hidden; 
+  /* 5为显示的行数 */
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+}
+
+.order-goods-orderId{
+  padding-bottom:20rpx;
+  text-align: left;
+  padding-left:30rpx;
+  color:#a85;
+}
+
+.no-more{
+  text-align: center;
+  font-size: 32rpx;
+  color:#777;
+  padding-bottom: 25rpx;
+}

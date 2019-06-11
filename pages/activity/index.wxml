@@ -1,0 +1,32 @@
+
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="position:absolute; top:0; left:0; right:0; bottom:0;">
+  <view class="activity-content-con">
+    <view class="activity-title">如何参与活动？</view>
+    <view class="activity-content">1.复制以下文案并微信发送给自己</view>
+    <view class="activity-content">2.通过微信访问活动地址购买</view>
+  </view>
+
+  <view class="activity-content-con" wx:if="{{activityContent}}">
+    <view class="activity-title">活动文案</view>
+    <view wx:for="{{activityContent}}" wx:key="this" wx:if="{{index>1}}">
+      <view class="activity-content">{{item}}</view>
+    </view>
+    <view class="activity-title2"></view>
+  </view>
+
+  <view class="activity-image-con" wx:if="{{activityImgUrl}}">
+    <image class="activity-image" mode="widthFix" bindtap="shareImage" show-menu-by-longpress="true" src="{{activityImgUrl}}" />
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="footer-fixed f-30">
+    <view bindtap="copyActivityContent" class="order-number" data-type="addCart">复制文字</view>
+    <view bindtap="shareImage" class="order-bt" data-type="buyNow"> 分享图片</view>
+  </view>
+
+</scroll-view>
+
+<!-- 返回顶部 -->
+<view bindtap="goTop" class="widget-goTop" wx:if="{{floorstatus}}">
+  <text class="iconfont icon-fanhuidingbu"></text>
+</view>

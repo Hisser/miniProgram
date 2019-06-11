@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "新人福利",
+  "usingComponents": {
+    "shortcut": "/components/shortcut/shortcut"
+  }
+}

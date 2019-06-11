@@ -1,0 +1,8 @@
+/* pages/album/album.wxss */
+@import "../template/template.wxss";
+::-webkit-scrollbar
+{
+width: 0;
+height: 0;
+color: transparent;
+}

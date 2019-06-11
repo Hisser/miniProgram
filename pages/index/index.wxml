@@ -1,0 +1,91 @@
+<import src="../template/template.wxml" />
+<view class='contain'>
+  <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="bindDownLoad" bindscrolltoupper="refresh" lower-threshold="100">
+    <view class='nav'>
+      <view class='search_form'>
+        <view class='input_form'>
+          <navigator url="../search/index">
+            <view class='search_input'>
+              <p class="p">京东99%的商品都有优惠券或者返利</p>
+            </view>
+          </navigator>
+        </view>
+      </view>
+    </view>
+
+    <view class="scroll_view">
+      <scroll-view class="scroll-view_H1" scroll-x="true" style="width: 90%">
+        <view class='navbar'>
+          <view class='label ' bindtap='changeCatId' wx:for="{{navList}}" id="{{item.catId}}" wx:for-index="{{item.catId}}" wx:key="key" style='{{item.catId == catId ? "border-bottom: 2px solid #FD3F47;color:#FD3F47;":""}}'>
+            {{item.catName}}
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view hidden='{{hidden}}'>
+      <!--banner -->
+      <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500">
+        <block wx:for="{{adList}}" wx:key="key">
+          <swiper-item width="100%" >
+           <!-- <navigator url='../activity/index?activity_id={{item.adId}}' style="width:100%;height:100%;"> -->
+            <image src="{{item.adCodeW450}}"  bindtap="openMainAd" data-bizCode="{{item.bizCode}}" data-adid="{{item.adId}}" data-bizId="{{item.bizId}}" class="slide-image" width="100%" height="6rem" />
+            <!-- </navigator> -->
+          </swiper-item>
+        </block>
+
+      </swiper>
+
+      <template is="pic_mokuai" data="{{bannerAd,popAds,popAdsHidden}}" wx:if="{{bannerAd}}"></template>
+
+      <view class="view_white">
+
+        <view class="tips">
+          <text>爆品推荐</text>
+        </view>
+        <swiper indicator-dots="true" autoplay='true' interval="5000" duration="500" style="height:250px" wx:if="{{hotGoods}}">
+          <block wx:for="{{[0,1,2,3,4]}}" wx:for-item="i" wx:key="key">
+            <swiper-item width="100%">
+              <block wx:for="{{[0,1,2]}}" wx:for-item="j" wx:key="key">
+                <view class='grids'>
+                  <navigator hover-class="none" url="../goods/index?goods_id={{hotGoods[3*i+j].goodsId}}">
+                    <view>
+                      <view class='grids_view'>
+                        <view class='grids_view_img'>
+                          <image src="{{hotGoods[3*i+j].picUrl}}" class='bpgoods_img'></image>
+                        </view>
+                        <view class='bpgoods_text'>
+                          {{hotGoods[3*i+j].title}}
+                        </view>
+                      </view>
+                      <view class='grids_view2'>
+                        <view class="bpgood_price">
+                          <text class="bpgood_priceed">¥{{hotGoods[3*i+j].orgPrice}}</text>
+                        </view>
+                      </view>
+                    </view>
+                    <view class='bpgoods_coupon' wx:if="{{hotGoods[3*i+j].hasCoupon !=false}}">
+                        <text style="line-height:15px">优惠券¥{{hotGoods[3*i+j].couponPrice}}</text>
+                      </view>
+                      <view class="bpgood_price">
+                        <text style='line-height:12px;font-size:12px;margin-left:10px;display:flex;align-items:flex-end'>券后价:</text>
+                        <text style='line-height:12px;font-size:14px;font-weight:bold;'>
+                        ¥{{hotGoods[3*i+j].price}}
+                        </text>
+                        
+                      </view>
+                  </navigator>
+                </view>
+
+              </block>
+            </swiper-item>
+          </block>
+
+        </swiper>
+      </view>
+    </view>
+    <!-- 商品列表  -->
+    <template is="goodsListItem" data="{{goodsList,grade}}">
+    </template>
+  </scroll-view>
+</view>

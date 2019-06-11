@@ -1,0 +1,130 @@
+<!--pages/personal/personal.wxml-->
+<!--index.wxml-->
+<view class="mod_alert_tip" style="display:block" wx:if="{{isshowbinduserinfo}}">
+  <view class="mod_alert-box">
+    <text class="mod_alert_title">提示</text>
+    <view class="mod_alert_qr">
+      <button bindgetuserinfo='getMemberForButton' open-type="getUserInfo" lang="zh_CN">点击绑定微信用户信息</button>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class="top">
+
+    <view class="userinfo">
+
+      <view class="userinfo-avatar">
+        <view class='userinfo-image'>
+          <open-data lang="zh_CN" type="userAvatarUrl"></open-data>
+        </view>
+      </view>
+
+      <view class="userDetail">
+        <view class='username_view'>
+          <view><text class="userinfo-nickname">{{userInfo.nickName}}</text></view>
+          <view wx:if="{{userInfo.grade == 1}}">
+            <image src="https://oss.yuezijie.cn/image/smallProgram/VIP.png?x-oss-process=style/w750_new" class='vip_style'></image>
+          </view>
+        </view>
+        <view class="inviteInfo">
+          <text style="padding-right:0rpx">邀请码:{{userInfo.memberNo}}</text>
+          <view class="copy" bindtap="copyContent" data-value="{{userInfo.memberNo}}">复制</view>
+        </view>
+      </view>
+
+
+      <view class="usertype-box">
+     
+        <view class='member' bindtap='turnToVipRight'>
+          <view class="ordinaryleader" >会员及权益</view>
+          <view>
+            <icon type='info' size='15' color='#fff' style='margin-top:6px;'></icon>
+          </view>
+        </view>
+      
+        <text class="w" bindtap='wechatKefu'>微信专属客服></text>
+      </view>
+    </view>
+
+    <view class="user_information cardInfo withdraw">
+      <view class="joinVip">
+        <text class="vipDetail">建50人推广群，开启赚钱特权</text>
+        <navigator class="upgrade" url='../upgrade/upgrade'>
+          <text>升级超级会员</text>
+        </navigator>
+      </view>
+      <view class="titleInfo fl">
+        <text class="title">可用余额：<text class="amount-num ">{{totalAmount}}</text>元</text>
+        <navigator url='../commissionWithdraw/index' hover-class="none">
+          <text style="font-size:15px;">去提现></text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <view class="user_information cardInfo">
+    <view class="titleInfo fl">
+      <text class="title">我的粉丝</text>
+      <navigator url='../partner/index' hover-class="none">
+        <text style="font-size:15px;">更多</text>
+      </navigator>
+    </view>
+    <view class="boxInfo">
+      <view class="inforbox">
+        <text class="num">{{todayFans}}人</text>
+        <text>今日直属</text>
+      </view>
+      <view class="inforbox">
+        <text class="num">{{firstFans}}人</text>
+        <text>全部直属</text>
+      </view>
+      <view class="inforbox">
+        <text class="num">{{allFans}}人</text>
+        <text>全部粉丝</text>
+      </view>
+    </view>
+
+    <image class='earnPic' bindtap='openStrategy' src='../../images/fivebu.png' mode='widthFix'></image>
+
+  </view>
+
+  <view class="user_information cardInfo">
+    <view class="titleInfo fl">
+      <text class="title">订单信息</text>
+      <navigator url='../myorder/index'>
+        <text style="font-size:15px;">更多</text>
+      </navigator>
+    </view>
+    <view class="nav-tabs {{haveorderstate?'active':''}} ">
+      <view bindtap="tabFun" class="tab-list  {{tabCurIndex=='today'? 'active' : 'default'}}" data-id="today">
+        今日
+      </view>
+      <view bindtap="tabFun" class="tab-list  {{tabCurIndex=='yesterday'? 'active' : 'default'}}" data-id="yesterday">
+        昨日
+      </view>
+      <view bindtap="tabFun" class="tab-list  {{tabCurIndex=='oneWeek'? 'active' : 'default'}}" data-id="oneWeek">
+        近7日
+      </view>
+      <view bindtap="tabFun" class="tab-list  {{tabCurIndex=='oneMonth'? 'active' : 'default'}}" data-id="oneMonth">
+        近30日
+      </view>
+    </view>
+    <view class="boxInfo">
+      <view class="inforbox order">
+        <text>付款订单(笔)</text>
+        <text class="num">{{orderCount}}</text>
+      </view>
+      <view class="inforbox order">
+        <text>付款预估收入（元）</text>
+        <text class="num">{{orderIncome}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="wxapp-modal ">
+    <view class="code-box">
+      <image style='display:none;' bindtap="clickImage" data-src="{{qrcode}}" src="{{qrcode}}" mode="scaleToFill"></image>
+    </view>
+  </view>
+  <view class="footer">
+    <text>普惠大众，分享价值</text>
+  </view>
+</view>

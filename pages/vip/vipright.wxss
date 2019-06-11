@@ -1,0 +1,28 @@
+/* pages/vip/vipright.wxss */
+.main{
+  margin-top: 20px;
+  padding-left: 4%;
+  padding-right: 4%;
+  width: 92%;
+  /* background-color: #fff; */
+  margin-bottom: 50px;
+
+}
+.view{
+  margin-top: 5%;
+  /* background-color: #fff; */
+}
+
+.text_heard{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.text_heard2{
+  font-size: 16px;
+  font-weight: bold;
+
+}
+.text_heard3{
+  font-size: 14px;
+}

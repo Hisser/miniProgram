@@ -1,0 +1,45 @@
+<!--pages/upgrade/upgrade.wxml-->
+<view class='upgrade_center'>
+  <view class='upgrade_pic2'>
+    <view class="upgrade_pic_view">
+      <image src="../../images/upgrade/upgrade.png" class="upgrade_pic_style" mode='widthFix'></image>
+    </view>
+  </view>
+</view>
+<view class='upgrade_center2'>
+  <view class='upgrade_pic2'>
+    <view class='upgrade_title'>
+      <text class="text_style">建群推广升级</text>
+    </view>
+    <view class="upgrade_content">
+      <text class="text_content">你可以建一个人数大于50的购物推广群，并升级超级会员开启赚钱特权。每天往群里推广爆款好物，有成交订单即可获得推广佣金，群人数越多，收益越高。建群升级后超级会员收益是这样的：
+      </text>
+    </view>
+    <view class='upgrade_pic_center'>
+      <image src='https://oss.yuezijie.cn/image/upgrade_detail.png?x-oss-process=style/w750_new' class="detail_pic" mode='widthFix'></image>
+    </view>
+    <view class='creatGroup1'>
+      <view class='upgrade_title'>
+      <text class="text_style1">方式一：导师协助建群升级（强烈推荐）</text>
+      </view>
+      <view class='upgrade_title'>
+        <text class="text_content1">可获得专人培训快速上手赚钱及常见问题解答服务</text>
+      </view>
+      <view class='upgrade_title'>
+        <button class='button_styles' bindtap='goUpgrade1'>去升级 </button>
+      </view>
+    </view>
+
+    <view class='creatGroup2'>
+      <view class='upgrade_title'>
+      <text class="text_style1">方式二：自主建群升级</text>
+      </view>
+      <view class='upgrade_title'>
+        <text class="text_content1">如果导师一个小时未响应，你可以自主建群升级</text>
+      </view>
+      <view class='upgrade_title'>
+        <button class='button_styles2'>去升级 </button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,97 @@
+<wxs module="filter" src="./util.wxs"></wxs>
+<template name="goodsListItem">
+  <view style="width100%;margin-top:0.5rem;background-color:#fff; ">
+    <view class='goodsList' wx:for="{{goodsList}}" wx:key="{{index}}">
+      
+        <view class='goodsRow'>
+          <view class='goodsLeft'>
+            <image src='{{item.picUrl}}' class='pic'></image>
+          </view>
+          <view class='goodsRight'>
+          <navigator url="../goods/index?goods_id={{item.goodsId}}" hover-class="none">
+            <view class="goods-title  f-32 twolist-hidden">
+              <image class="image-plat-icon" src="../../images/jd_plat.png" /> {{item.title}}
+            </view>
+            <view class='goods_price'>
+              <view>
+                <text class='goods_price1'>京东价:</text>
+                <text class='goods_price2'>¥{{item.orgPrice}}</text>
+              </view>
+              <view>
+                <!-- <text class='goods_price1'>评论{{item.comments}}条</text> -->
+                <text class='goods_price3' wx:if='{{item.goodCommentsShare}}'>好评率{{item.goodCommentsShare}}%</text>
+              </view>
+            </view>
+            <view class='goods_coupon' wx:if="{{item.hasCoupon ==true}}">
+              <text class='goods_coupon_price'>优惠券¥{{item.couponPrice}}</text>
+            </view>
+            <view class='goods_coupon2' wx:else>
+              <text class='goods_coupon_price'>返利¥{{filter.numberToFixed(item.commission*0.27)}}</text>
+            </view>
+
+            <view class='end_cloumn'>
+              <view class='couponed_price'>
+                <text class='couponed_price_text1' wx:if="{{item.hasCoupon ==true}}">券后价</text>
+                <text class='couponed_price_text1' wx:else>返利价</text>
+                <text class='couponed_price_text'>
+                ¥{{item.price}}</text>
+              </view>
+              <view class='buttons'>
+                <button class='button_styles'>立即抢 </button>
+              </view>
+            </view>
+            </navigator>
+            <navigator url="../upgrade/upgrade" hover-class="none">
+            <view class='channel_tips' wx:if="{{grade !=1}}">
+              <image src='../../images/channelTips.png' style="height:20px;width:160px;"></image>
+              <text class='text_commission_style'>升级超级会员推广可赚{{filter.numberToFixed(item.commission*0.3)}}</text>
+            </view>
+            <view class='channel_tips' wx:if="{{grade==1}}">
+              <image src='../../images/channelTips.png' style="height:20px;width:160px;"></image>
+              <text class='text_commission_style'>超级会员推广可多赚{{filter.numberToFixed(item.commission*0.3)}}</text>
+            </view>
+            </navigator>
+          </view>
+        </view>
+    </view>
+  </view>
+</template>
+<!-- 首页模块-->
+<template name="pic_mokuai">
+  <view class='mk_white'>
+    <view class='mk_top' wx:if="{{bannerAd.length>0}}" bindtap="openMainAd" data-adId='{{bannerAd[0].adId}}' data-bizid="{{bannerAd[0].bizId}}" data-bizCode="{{bannerAd[0].bizCode}}">
+      <image src="{{bannerAd[0].adCodeW450}}" class='mk_buttom_banner'></image>
+    </view>
+
+    <view class="pic_mokuai" wx:if="{{bannerAd}}">
+
+      <view class='mk_left' bindtap='openFuli'>
+        <image src='../../images/mokuai/5.png' class='mk_left_img'></image>
+
+      </view>
+
+      <view class='mk_right'>
+
+        <view class='mk_first' bindtap='openStrategy' data-url='../strategy/index'>
+          <image src='../../images/mokuai/3.png' class='mk_first_pic'></image>
+        </view>
+
+        <view class='mk_secord' bindtap='openCreateGroup'>
+          <image src='../../images/mokuai/4.png' class='mk_first_pic'></image>
+        </view>
+      </view>
+    </view>
+
+    <view class='mk_buttom' wx:if="{{bannerAd.length>1}}" bindtap="openMainAd" data-adId='{{bannerAd[1].adId}}' data-bizid="{{bannerAd[1].bizId}}" data-bizCode="{{bannerAd[1].bizCode}}">
+      <image src="{{bannerAd[1].adCodeW450}}" class='mk_buttom_pic'></image>
+      <!-- <image src='../../images/mokuai/2.png' class='mk_buttom_pic' ></image> -->
+    </view>
+
+  </view>
+  <view class='popAds_view' wx:if="popAds.length>0" hidden='{{popAdsHidden}}'>
+    <view class='popAds_img'>
+      <image src="{{popAds[0].adCodeW450}}" class='popAds_img_style' bindtap='openAd' data-url='{{popAds[0].adLink}}' data-id='{{popAds[0].adId}}'></image>
+      <image src="../../images/close.png" class="popAds_close" bindtap='closeAd' data-id='{{popAds[0].adId}}'></image>
+    </view>
+  </view>
+</template>

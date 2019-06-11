@@ -1,0 +1,152 @@
+<import src="../../wxParse/wxParse.wxml"></import>
+<scroll-view bindscroll="scroll" scroll-top="{{scrollTop}}" scroll-y="true" style="position:absolute; top:0; left:0; right:0; bottom:0;">
+  <view class="container" wx:if="{{goodsInfo}}">
+    <view bindtap="imgPreview">
+      <swiper autoplay="{{autoplay}}" bindchange="setCurrent" class="banner-box  swiper-box" duration="{{duration}}" indicator-dots="{{indicatorDots}}" interval="{{interval}}" circular="{{true}}">
+        <swiper-item wx:for="{{goodsInfo.goodsGallery}}" wx:key="this">
+          <image class="slide-image" mode="aspectFill" src="{{item}}"></image>
+        </swiper-item>
+      </swiper>
+      <view class="number-banner">
+        <text>{{currentIndex}}</text>
+        <text>/{{goodsInfo.goodsGallery.length}}</text>
+      </view>
+    </view>
+    <view class="cont-box b-f">
+      <view class="goods-title  f-32 twolist-hidden">
+        <image src="../../images/jd_plat.png" class='image-plat-icon' /> {{goodsInfo.title}}
+      </view>
+
+      <view class="goods-sales-box f-28 dis-flex">
+        <view class="flex-box num">
+          <text class="orgprice">京东价:</text>
+          <text class="del">￥{{goodsInfo.orgPrice}}</text>
+        </view>
+
+        <text class="flex-box stock" bindtap="toGoodsDetail">查看详情></text>
+      </view>
+
+      <view wx:if="{{goodsInfo.hasCoupon}}">
+        <view class='comments-item'>
+          <view class='coupon_info_coupon' wx:if="{{goodsInfo.couponPrice!=null}}">
+            <text class="price-coupon">优惠券￥{{goodsInfo.couponPrice}}</text>
+          </view>
+
+          <view class='comments-detail'>
+            <text wx:if="{{goodsInfo.comments}}">评论数 {{goodsInfo.comments}}</text>
+            <text wx:if="{{goodsInfo.goodCommentsShare}}" class='commentsshare-detail'>好评率 {{goodsInfo.goodCommentsShare}}%</text>
+          </view>
+        </view>
+
+        <view class="flex-box num">
+          <text class="price_title">券后价：</text>
+          <text class="price_symbol">￥</text>
+          <text class="price_num">{{goodsInfo.price}}</text>
+        </view>
+      </view>
+      <view wx:else>
+        <view class='comments-item'>
+          <view class='coupon_info_subsidy'>
+            <text class="price-coupon">购买返￥{{goodsInfo.subsidy}}</text>
+          </view>
+
+          <view class='comments-detail'>
+            <text wx:if="{{goodsInfo.comments}}">评论数 {{goodsInfo.comments}}</text>
+            <text wx:if="{{goodsInfo.goodCommentsShare}}" class='commentsshare-detail'>好评率 {{goodsInfo.goodCommentsShare}}%</text>
+          </view>
+        </view>
+
+        <view class="flex-box num">
+          <text class="price_title">返利价：</text>
+          <text class="price_symbol">￥</text>
+          <text class="price_num">{{goodsInfo.subsidyprice}}</text>
+        </view>
+      </view>
+
+    </view>
+
+    <view class="subsidy_container" wx:if="{{!goodsInfo.hasCoupon}}">
+      <view class="subsidy_item">
+        <view class="subsidy_item_circle">
+          <image class="subsidy_item_circle_img" src="../../images/goods-detail/circle_subsidy.png" mode='widthFix' />
+          <view class='subsidy_item_circle_txt'>客户下单</view>
+        </view>
+        <view class="subsidy_item_arrow">
+          <view class='subsidy_item_arrow_txt'>下单成功</view>
+          <image class="subsidy_item_arrow_img" src="../../images/goods-detail/arrow.png" mode='widthFix' />
+        </view>
+        <view class="subsidy_item_circle">
+          <image class="subsidy_item_circle_img" src="../../images/goods-detail/circle_subsidy.png" mode='widthFix' />
+          <view class='subsidy_item_circle_txt1'>客户获得返利</view>
+        </view>
+        <view class="subsidy_item_arrow">
+          <view class='subsidy_item_arrow_txt'>结算后</view>
+          <image class="subsidy_item_arrow_img" src="../../images/goods-detail/arrow.png" mode='widthFix' />
+        </view>
+        <view class="subsidy_item_circle">
+          <image class="subsidy_item_circle_img" src="../../images/goods-detail/circle_subsidy.png" mode='widthFix' />
+          <view class='subsidy_item_circle_txt'>客户提现</view>
+        </view>
+      </view>
+
+      <view class="subsidy_item_tip">
+        <view class='subsidy_item_tip_txt'>*实际返利金额以最终到账金额为准</view>
+      </view>
+    </view>
+
+    <view class="cont-box b-f goods-property-box m-top20">
+      <text class="col-3 f-30">商品编号：</text>
+      <text class="col-3 f-30" bindtap="copyGoodsId">{{goodsInfo.goodsId}}</text>
+    </view>
+
+    <view class="cont-box b-f goods-property-box-info m-top20">
+      <view class="dis-flex small-icon">
+        <view class="small-icon-1 flex-box">
+          <image src="../../images/goods-detail/circle.png" class="image-circle"></image>
+          <text class="small-icon-title">京东商品</text>
+        </view>
+
+        <view class="small-icon-2 flex-box">
+          <image src="../../images/goods-detail/circle.png" class="image-circle"></image>
+          <text class="small-icon-title">品质保证</text>
+        </view>
+
+        <view class="small-icon-3 flex-box">
+          <image src="../../images/goods-detail/circle.png" class="image-circle"></image>
+          <text class="small-icon-title">无忧售后</text>
+        </view>
+
+      </view>
+    </view>
+
+    <!-- 底部操作栏 -->
+    <view class="footer-goods">
+      <!-- 回首页 -->
+      <view class="footer-icon-info" bindtap="toHomepage">
+        <image src="../../images/tabBar/home.png" class="image-btn-circle"></image>
+        <view class="footer-icon-info-title"> 首页 </view>
+      </view>
+
+      <view class="footer-icon-info" bindtap='showMenu'>
+        <image src="../../images/goods-detail/circle.png" class="image-btn-circle"></image>
+        <view class='footer-icon-info-title '> 小程序 </view>
+      </view>
+
+
+      <view bindtap="sharePoster" class="order-number" data-type="code">分享海报</view>
+      <view bindtap="toBuyGoods" class="order-buy"> 立即购买</view>
+    </view>
+  </view>
+</scroll-view>
+
+<!-- 菜单 -->
+<view class='menu' hidden="{{menu_hide}}" bindtap='showMenu'>
+  <view class='menu-bottom'>
+    <button class='menu-bottom-item' bindtap="sharePoster" data-type="mini">
+      分享小程序海报
+    </button>
+    <button class='menu-bottom-item' open-type='share'>
+      分享小程序
+    </button>
+  </view>
+</view>

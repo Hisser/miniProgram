@@ -1,0 +1,57 @@
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="position:absolute; top:0; left:0; right:0; bottom:0;">
+  <view class="activity-content-con">
+    <view class="activity-title">活动介绍</view>
+    <view class="activity-content">你可以推广以下活动链接，京东新人首次下单享受1元购好物活动</view>
+    <view class="activity-content">每推广一单，你可获得8元，同时你的下级推手推广一单，你可获得1.6元奖励</view>
+    <view class="activity-content2"></view>
+    <view class="activity-content">注:</view>
+    <view class="activity-content">1、新注册用户介绍：同一账号、同一身份证号、同一手机号、同一银行卡号、同一终端设备（手机）均视为同一用户。</view>
+    <view class="activity-content">2、9元优惠券领取成功后三天有效,优惠券过期未使用自动失效，请及时用券</view>
+    <view class="activity-content">3、拉新奖励订单下单五分钟后可在我的订单中查看</view>
+    <view class="activity-content">拉新奖励一般下单24小时后可在我的收益-活动收益中可见。</view>
+    <view class="activity-content2">  </view>
+    <view class="activity-content">【招募京东拉新代理】</view>
+    <view class="activity-content">京东新人一元购，拉新代理赚得多！</view>
+    <view class="activity-content">只要推广有资源，轻松一月赚十万！</view>
+    <view class="activity-content">【招推荐代理成功也有伯乐奖金】</view>
+
+  </view>
+
+ <view class="activity-content-con" wx:if="{{activityContent}}">
+    <view class="activity-title">活动文案</view>
+    <view wx:for="{{activityContent}}" wx:key="this"  wx:if="{{index>1}}">
+      <view class="activity-content">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="activity-image-con" >
+    <image class="activity-image" mode="widthFix" bindtap="shareImage" show-menu-by-longpress="true" src="https://oss.yuezijie.cn/image/smallProgram/demo.png?x-oss-process=style/w750_new" />
+  </view>
+
+  <!-- 底部操作栏 -->
+  <view class="footer-fixed f-30">
+    <view bindtap="wechatTg" class="order-number" data-type="addCart">微信推广</view>
+    <view bindtap="shareImageFaceToFace" class="order-bt" data-type="buyNow"> 面对面推广</view>
+    <view bindtap="shareImageToGroup" class="order-number2" data-type="addCart">朋友圈推广</view>
+  </view>
+
+</scroll-view>
+
+<view class='popAds_view' wx:if="codeImg !=''" hidden='{{!show}}' >
+    <view class='popAds_img'>
+      <image src="{{codeImg}}" style='width:50%' mode='widthFix'></image>
+      <image src="../../images/close.png" class="popAds_close" bindtap='closeCodeImg'></image>
+    </view>
+</view>
+
+<view class='popAds_view' wx:if="codeImg !=''" hidden='{{!show2}}' >
+    <view class='popAds_img'>
+      <image src="{{postImg}}" style='width:60%;margin-top:-5%' mode='widthFix'></image>
+      <button class='button_styles' bindtap='saveOnPhone'>保存到手机相册</button>
+      <image src="../../images/close.png" class="popAds_close" bindtap='closeCodeImg2'></image>
+    </view>
+</view>
+<!-- 返回顶部 -->
+<!-- <view bindtap="goTop" class="widget-goTop" >
+  <text class="iconfont icon-fanhuidingbu"></text>
+</view> -->
